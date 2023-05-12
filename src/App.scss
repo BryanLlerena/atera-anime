@@ -1,0 +1,85 @@
+@import url('./assets/variables/fonts.scss');
+
+* {
+  box-sizing: border-box;
+  color: #FFFFFF;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+h1 {
+  font-family: 'Satoshi-Bold', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h2 {
+  font-family: 'Satoshi-Bold', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h3 {
+  font-family: 'Satoshi-Bold', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h4 {
+  font-family: 'Satoshi-Bold', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h5 {
+  font-family: 'Satoshi-Bold', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+input, label {
+  font-family: 'Satoshi-Bold', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+p, span, a, li, div {
+  font-family: 'Satoshi-Regular', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 400px ) {
+  h1 {
+    font-size: 34px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 22px;
+  }
+  h4 {
+    font-size: 18px;
+  }
+  h5 {
+    font-size: 16px;
+  }
+  p, span, a, li, div {
+    font-size: 14px;
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+}

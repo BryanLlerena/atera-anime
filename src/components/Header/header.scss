@@ -1,0 +1,95 @@
+.header--container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: #db2d69;
+  .logo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 250px;
+    padding-left: 20px;
+    gap: 5px;
+    & img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      filter: invert(1);
+    }
+    .name {
+      display: flex;
+      flex-direction: column;
+      gap: 0px;
+      & h5 {
+        margin: 0px;
+        font-size: 18px;
+        line-height: 18px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      & p {
+        text-transform: uppercase;
+        margin: 0px;
+        font-size: 12px;
+        line-height: 12px;
+        font-weight: 600;
+        letter-spacing: 0.8px;
+      }
+    }
+  }
+
+  .menu--container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+    padding-right: 20px;
+    .menu {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      gap: 10px;
+      & ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        padding: 0px;
+        margin: 0px;
+        & li {
+          margin: 0px;
+          padding: 0px;
+          list-style: none;
+          & a {
+            font-family: 'Satoshi-Bold', sans-serif;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 600;
+          }
+        }
+      }
+      #search-input {
+        width: 250px;
+        height: 40px;
+        border-radius: 20px;
+        padding: 10px 15px;
+        border: none;
+        outline: none;
+        color: #000;
+      }
+    }
+
+    .user-info {
+      & img {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+      }
+    }
+  }
+}
