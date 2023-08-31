@@ -1,25 +1,29 @@
 .layout--container {
+  position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100vw;
   height: 100vh;
-  background: rgba(49, 45, 45, 1);
+  overflow: hidden;
+  background-image: url(../../assets/images/background_v1.png);
+  background-repeat:no-repeat;
+  background-size: cover;
   .layout-header {
     height: 80px;
     width: 100%;
   }
+  .layout-sidebar {
+    top: 0px;
+    left: 0px;
+    position: sticky;
+    width: 80px;
+    height: 100vh;
+    background: #FFF;
+  }
   .layout-content {
     display: flex;
     flex-direction: row;
-    height: 100%;
-    width: 100%;
-    .layout-sidebar {
-      width: 250px;
-      height: 100%;
-    }
-    .layout-children {
-      flex-grow: 1;
-      padding: 20px;
-    }
+    flex-grow: 1;
+    overflow: auto;
   }
 }

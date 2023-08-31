@@ -3,16 +3,16 @@ import Router from './Router'
 import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink, ApolloLink } from "@apollo/client"
 import './App.scss'
 
-const backendUrl = import.meta.env.API_URL;
+// const backendUrl = import.meta.env.BASE_URL;
 
-const httpLink = new HttpLink({ uri: backendUrl });
+const httpLink = new HttpLink({ uri: 'https://graphql.anilist.co' });
 
 const authLink = new ApolloLink((operation, forward) => {
-  const token = localStorage.getItem('auth_token');
   operation.setContext({
     headers: {
-      authorization: token? token:''
-    }
+      'Content-type': 'application/json',
+      'Accept': 'application/json'
+    },
   })
   return forward(operation)
 })

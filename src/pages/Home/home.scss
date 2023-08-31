@@ -1,0 +1,18 @@
+.home--container {
+  width: 100%;
+  display: flex;
+  height: fit-content;
+  flex-direction: column;
+
+  
+  .home--list {
+    width: 100%;
+    height: fit-content;
+    padding: 0px 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    grid-template-rows: auto;
+    justify-content: space-evenly;
+    row-gap: 30px;
+  }
+}
