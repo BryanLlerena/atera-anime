@@ -16,9 +16,10 @@
     top: 0px;
     left: 0px;
     position: sticky;
+    min-width: 80px;
     width: 80px;
     height: 100vh;
-    background: #FFF;
+    background: #000000;
   }
   .layout-content {
     display: flex;

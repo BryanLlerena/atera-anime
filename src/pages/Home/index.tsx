@@ -57,6 +57,7 @@ const Home = () => {
           data.Page.media.map((anime,i) => (
             <AnimeCard
               key={i}
+              pathCard={anime.id}
               title={anime.title.romaji.toLowerCase()}
               image={anime.coverImage.large}
             /> 

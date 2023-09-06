@@ -3,16 +3,21 @@ import './animeCard.scss'
 interface Props {
   title: string,
   image: string,
+  pathCard: string
 }
 
-const AnimeCard = ({ title, image } : Props ) => {
+const AnimeCard = ({ title, image, pathCard } : Props ) => {
   return(
     <div className="anime-card--basic">
       <div className="card-image">
-        <img src={image} />
+        <a href={pathCard} target='_blank'>
+          <img src={image} />
+        </a>
       </div>
       <div className="card-text">
-        <h5>{title}</h5>
+        <a href={pathCard} target='_blank'>
+          <h5>{title}</h5>
+        </a>
       </div>
     </div>
   )
