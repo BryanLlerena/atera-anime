@@ -2,8 +2,15 @@ import { gql } from "@apollo/client";
 
 export const MEDIA_LIST = gql`
   query MediaList ($search: String) {
-    media: Page(page:1, perPage: 20){
-      media(sort: TRENDING_DESC, search: $search){
+    media: Page(page:1, perPage: 15){
+      pageInfo {
+        total
+        perPage
+        currentPage
+        lastPage
+        hasNextPage
+      },
+      media(sort: SEARCH_MATCH, search: $search, isAdult: false){
         id
         title{
           romaji
