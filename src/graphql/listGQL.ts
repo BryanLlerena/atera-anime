@@ -1,8 +1,12 @@
 import { gql } from "@apollo/client";
 
 export const MEDIA_LIST = gql`
-  query MediaList ($search: String) {
-    media: Page(page:1, perPage: 15){
+  query MediaList (
+    $search: String,
+    $isAdult: Boolean,
+    $type: MediaType
+  ) {
+    media: Page(page:1, perPage: 18){
       pageInfo {
         total
         perPage
@@ -10,7 +14,7 @@ export const MEDIA_LIST = gql`
         lastPage
         hasNextPage
       },
-      media(sort: SEARCH_MATCH, search: $search, isAdult: false){
+      media(sort: SEARCH_MATCH, search: $search, isAdult: $isAdult, type: $type){
         id
         title{
           romaji
@@ -70,6 +74,69 @@ export const MEDIA_LIST = gql`
       }
     }
   }
+`
+
+export const MEDIA_BY_ID = gql`
+query MediaList ( $id: Int) {
+  Media(id: $id){
+    id
+    title{
+      romaji
+      english
+      native
+      userPreferred
+    }
+    coverImage{
+      extraLarge
+      large
+      medium
+      color
+    }
+    startDate{
+      year
+      month
+      day
+    }
+    endDate{
+      year
+      month
+      day
+    }
+    bannerImage
+    season
+    seasonYear
+    description
+    type
+    format
+    status(version:2)
+    episodes
+    duration
+    chapters
+    volumes
+    genres
+    isAdult
+    averageScore
+    popularity
+    mediaListEntry{
+      id
+      status
+    }
+    nextAiringEpisode{
+      airingAt
+      timeUntilAiring
+      episode
+    }
+    studios(isMain:true){
+      edges{
+        isMain
+        node{
+          id
+          name
+        }
+      }
+    }
+  }
+}
 `
 
 export const LAST_UPDATE_LIST = gql`

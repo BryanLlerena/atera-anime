@@ -42,3 +42,43 @@
     }
   }
 }
+
+.anime-card--small {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 200px;
+  margin: 0px auto;
+  .card-image {
+    display: flex;
+    width: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: rgba(255, 255, 255, 0.15) 1.95px 1.95px 2.6px 0px;
+    & a {
+      display: flex;
+      cursor: pointer;
+    }
+    & img {
+      width: 200px;
+      height: 315px;
+      object-fit: cover;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+  .card-text {
+    padding: 0px 10px;
+    & p {
+      font-size: 14px;
+      margin: 0px;
+      text-transform: capitalize;
+      transition: all 0.5s ease-in-out;
+      letter-spacing: 0.5px;
+      & b {
+        text-transform: lowercase;
+        margin-left: 6px;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+}

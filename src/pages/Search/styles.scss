@@ -11,24 +11,70 @@
     height: 100%;
     padding: 20px 20px;
     box-shadow: rgb(44, 62, 80) -5px 0px 15px -5px;
-    .search-bar {
+    .search-bar-label {
       display: flex;
-      align-items: center;
-      height: 35px;
-      width: 100%;
-      background: transparent;
-      border: 2px solid rgb(133, 133, 133);
-      padding: 0px 10px;
-      border-radius: 17.5px;
-      color: #FFFFFF;
-      font-size: 15px;
-      font-style: italic;
-      font-weight: normal;
+      flex-direction: column;
+      font-size: 16px;
       letter-spacing: 0.5px;
-      outline: none;
-      &::placeholder {
+      gap: 5px;
+      .search-bar {
+        display: flex;
+        align-items: center;
+        height: 35px;
+        width: 100%;
+        background: transparent;
+        border: 2px solid #858585;
+        padding: 0px 10px;
+        border-radius: 17.5px;
+        color: #FFFFFF;
         font-size: 15px;
         font-style: italic;
+        font-weight: normal;
+        letter-spacing: 0.5px;
+        outline: none;
+        &::placeholder {
+          font-size: 15px;
+          font-style: italic;
+        }
+      }
+    }
+
+    .search-filter {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #858585;
+      & p {
+        font-family: 'Satoshi-Bold', sans-serif;
+        width: 100%;
+        margin: 0px;
+        font-size: 16px;
+      }
+      & label {
+        font-family: 'Satoshi-Regular', sans-serif;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-weight: 500;
+        font-size: 14px;
+        gap: 10px;
+        margin-right: 10px;
+      }
+      & select {
+        width: 100px;
+        background: transparent;
+        border: 2px solid rgb(133, 133, 133);
+        border-radius: 8px;
+        padding: 5px 10px;
+        & option {
+          display: block;
+          background: #222;
+          border: #444 solid;
+          font: inherit;
+        }
       }
     }
 
@@ -65,7 +111,7 @@
     .result-content {
       padding: 20px 20px;
       display: grid;
-      grid-template-columns: repeat(auto-fill, 300px);
+      grid-template-columns: repeat(auto-fill, 220px);
       grid-template-rows: auto;
       justify-content: space-evenly;
       row-gap: 30px;

@@ -6,21 +6,24 @@ import './styles.scss'
 //Components
 import Loader from '../../components/Loader'
 import AnimeCard from '../../components/AnimeCard'
-import ReactPaginate from 'react-paginate'
 
 const SearchPage = () => {
   const [ searchValue, setSearchValue ] = useState('')
+  const [ filterValue, setFilterValue ] = useState({
+    type: 'ANIME',
+    isAdult: false
+  })
   const [ getMediaQuery, { loading, error, data }] = useLazyQuery<{
     media: IPageMedia,
   }>(MEDIA_LIST, { 
       fetchPolicy: 'no-cache',
       variables: {
-        search: searchValue
+        search: searchValue,
+        // isAdult: filterValue.isAdult,
+        // type: filterValue.type
       }
     }
   )
-
-  console.log(loading, error, data)
 
   useEffect(()=> {
     getMediaQuery()
@@ -29,12 +32,32 @@ const SearchPage = () => {
   return (
     <div className="search-page--container">
       <div className='search--container'>
-        <input
-          value={searchValue}
-          onChange={(e) => setSearchValue(e.currentTarget.value)}
-          placeholder='Buscar anime, manga o novela ligera ...'
-          className='search-bar'
-        />
+        <label className='search-bar-label'>
+          Buscar por nombre:
+          <input
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.currentTarget.value)}
+            placeholder='Buscar anime, manga o novela ligera ...'
+            className='search-bar'
+          />
+        </label>
+
+        {/* <div className='search-filter'>
+          <p>Filtrar Búsqueda</p>
+          <label>
+            Tipo:
+            <select defaultValue='ANIME' onChange={(e) => setFilterValue(values => ({...values, type: e.target.value}))}>
+              <option value='ANIME|MANGA'>Todo</option>
+              <option value='MANGA'>Manga</option>
+              <option value='ANIME'>Anime</option>
+            </select>
+          </label>
+
+          <label>
+            <input type='checkbox' onChange={(e) => setFilterValue(values => ({...values, isAdult: e.target.checked}))}/>
+            +18
+          </label>
+        </div> */}
 
         <div className='search-result'>
           {!loading && !error && data && data.media ?
@@ -54,24 +77,17 @@ const SearchPage = () => {
             data.media.media.map((anime,i) => (
               <AnimeCard
                 key={i}
-                pathCard={anime.id}
+                pathCard={`/anime/${anime.id}`}
                 title={anime.title.romaji.toLowerCase()}
                 image={anime.coverImage.large}
+                size='small'
+                type={anime.type.toLowerCase()}
               />
             )):
             <Loader/>
           }
         </div>
 
-        <ReactPaginate
-          breakLabel="..."
-          nextLabel="next >"
-          // onPageChange={handlePageClick}
-          pageRangeDisplayed={5}
-          pageCount={3000}
-          previousLabel="< previous"
-          renderOnZeroPageCount={null}
-        />
       </div>
     </div>
   )
