@@ -7,7 +7,7 @@ interface Props {
 }
 
 const HeroColumns = ({ trend_data } : Props) => {
-  const bannerImages = trend_data.map((anime, i) => (anime))
+  const bannerImages = trend_data.map((anime) => (anime))
 
   return(
     <div className="hero-columns--container">

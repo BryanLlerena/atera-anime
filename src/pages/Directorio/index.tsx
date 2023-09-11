@@ -1,5 +1,7 @@
 import { useQuery } from "@apollo/client"
 import { ANIME_LIST } from "../../graphql/listGQL"
+// Components
+import Layout from "../../components/Layout"
 import './styles.scss'
 
 const Directorio = () => {
@@ -12,9 +14,11 @@ const Directorio = () => {
   console.log(loading,error, data)
 
   return(
-    <div className="home--container">
-      <p>Home Page</p>
-    </div>
+    <Layout>
+      <div className="home--container">
+        <p>Home Page</p>
+      </div>
+    </Layout>
   )
 }
 

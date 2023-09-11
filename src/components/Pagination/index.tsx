@@ -7,7 +7,7 @@ interface Props {
   total: number
 }
 
-const Pagination = ({ currentPage, hasNextPage, lastPage, total } : Props) => {
+const Pagination = ({ currentPage, lastPage } : Props) => {
   const pages : number[] = []
 
   for(let i = 1 ; i <= lastPage ; i++){

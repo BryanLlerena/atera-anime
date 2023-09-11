@@ -1,4 +1,3 @@
-import Layout from './components/Layout'
 import Router from './Router'
 import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink, ApolloLink } from "@apollo/client"
 import './App.scss'
@@ -25,9 +24,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Layout>
-        {Router}
-      </Layout>
+      {Router}
     </ApolloProvider>
   )
 }

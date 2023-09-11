@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
 import { MEDIA_BY_ID } from '../../graphql/listGQL'
 // Components
+import Layout from '../../components/Layout'
 import AnimeHero from '../../components/AnimeHero'
 import Loader from '../../components/Loader'
 import { IMedia } from '../../types/pageList'
@@ -22,17 +23,19 @@ const AnimeView = () => {
 
 
   return (
-    <div className="anime-view--container">
-      { !loading && !error && data && data.Media ?
-        <div className='anime-view--content'>
-          <AnimeHero
-            backgroundImage={data.Media.bannerImage}
-            backgroundColor={data.Media.coverImage.color}
-          />
-        </div>:
-        <Loader/>
-      }
-    </div>
+    <Layout>
+      <div className="anime-view--container">
+        { !loading && !error && data && data.Media ?
+          <div className='anime-view--content'>
+            <AnimeHero
+              backgroundImage={data.Media.bannerImage}
+              backgroundColor={data.Media.coverImage.color}
+            />
+          </div>:
+          <Loader/>
+        }
+      </div>
+    </Layout>
   )
 }
 

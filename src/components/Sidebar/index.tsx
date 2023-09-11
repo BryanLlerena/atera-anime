@@ -1,4 +1,4 @@
-import {  useNavigation } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { AiOutlineRise } from 'react-icons/ai'
 import { BsFillInfoCircleFill } from 'react-icons/bs'
 import { BiShuffle } from 'react-icons/bi'
@@ -16,25 +16,40 @@ const Sidebar = () => {
       </div>
       
       <div className='sidebar-menu'>
-        <a href='/search-anime-manga/'>
+        <NavLink 
+          to='/search-anime-manga/'
+          className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}
+        >
           <TbSearch size='25px' color='#FFFFFF'/>
-        </a>
+        </NavLink>
         
-        <a href='/'>
+        <NavLink
+          to='/'
+          className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}
+        >
           <LiaHomeSolid size='25px' color='#FFFFFF'/>
-        </a>
+        </NavLink>
 
-        <a href='/top-rated/'>
+        <NavLink
+          to='/top-rated/'
+          className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}
+        >
           <AiOutlineRise size='25px' color='#FFFFFF'/>
-        </a>
+        </NavLink>
 
-        <a href='/'>
+        <NavLink
+          to='/'
+          className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}
+        >
           <TfiVideoClapper size='25px' color='#FFFFFF'/>
-        </a>
+        </NavLink>
 
-        <a href='/shuffle/'>
+        <NavLink
+          to='/shuffle/'
+          className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}
+        >
           <BiShuffle size='25px' color='#FFFFFF'/>
-        </a>
+        </NavLink>
       </div>
 
       <div className='sidebar--options'>

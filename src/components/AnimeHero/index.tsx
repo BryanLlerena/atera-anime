@@ -3,7 +3,7 @@ interface Props {
   backgroundColor: string
 }
 
-const AnimeHero = ({ backgroundImage, backgroundColor } : Props) => {
+const AnimeHero = ({ backgroundImage } : Props) => {
   return (
     <div className="anime-hero">
       <img src={backgroundImage} alt="hero_image.png"/>
