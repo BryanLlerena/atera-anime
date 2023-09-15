@@ -21,7 +21,6 @@ const AnimeView = () => {
     }
   )
 
-
   return (
     <Layout>
       <div className="anime-view--container">
@@ -31,6 +30,7 @@ const AnimeView = () => {
               backgroundImage={data.Media.bannerImage}
               backgroundColor={data.Media.coverImage.color}
             />
+            <h2></h2>
           </div>:
           <Loader/>
         }
